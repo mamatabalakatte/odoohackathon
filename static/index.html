@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssetFlow - Premium Gold Enterprise ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body class="dark-theme">
+    <!-- Parallax Gold Ambient Glow Background -->
+    <div class="glass-bg">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="stars-pattern"></div>
+    </div>
+
+    <!-- Toast Alerts Layer -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- 1. LOGIN / SIGNUP SCREEN -->
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-card glass-panel">
+            <div class="auth-brand-glow"></div>
+            <div class="auth-header">
+                <div class="glowing-logo-wrapper">
+                    <div class="pulse-ring"></div>
+                    <i data-lucide="crown" class="logo-icon-svg"></i>
+                </div>
+                <h1>ASSET<span class="gradient-text">FLOW</span></h1>
+                <p class="brand-version">PREMIUM ENTERPRISE ERP</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <h2>Authorize Identity</h2>
+                <p class="auth-subtitle">Verify cryptographic credentials to access assets ledger</p>
+                
+                <div class="form-group">
+                    <label for="login-email">Organization Email</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="login-email" required placeholder="name@organization.com" value="admin@assetflow.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="login-password" required placeholder="••••••••" value="password123">
+                    </div>
+                </div>
+
+                <div class="auth-footer-actions">
+                    <a href="#" id="btn-forgot-password" class="forgot-link">Recover credentials</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-glow w-100">
+                    <i data-lucide="shield-check"></i> Authorize & Enter
+                </button>
+
+                <p class="toggle-auth">New operator? <a href="#" id="link-show-signup">Register profile</a></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="auth-form hidden">
+                <h2>Create Operator Profile</h2>
+                <p class="auth-subtitle">Signup defaults credentials to Employee clearance level</p>
+
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="user"></i>
+                        <input type="text" id="signup-name" required placeholder="Priya Sharma">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="signup-email" required placeholder="name@organization.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-dept">Department</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="briefcase"></i>
+                        <select id="signup-dept" class="premium-select">
+                            <option value="">Select Department (Optional)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Security Password</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="signup-password" required placeholder="••••••••" minlength="6">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-glow w-100">
+                    <i data-lucide="user-plus"></i> Create Profile
+                </button>
+
+                <p class="toggle-auth">Already registered? <a href="#" id="link-show-login">Sign In</a></p>
+            </form>
+
+            <!-- Forgot Password Panel -->
+            <div id="forgot-password-panel" class="auth-form hidden">
+                <h2>Recover Credentials</h2>
+                <p class="auth-subtitle">Dispatches recovery token via secure network</p>
+                
+                <div class="form-group">
+                    <label for="forgot-email">Recovery Email Address</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="forgot-email" placeholder="name@organization.com">
+                    </div>
+                </div>
+
+                <button type="button" id="btn-submit-forgot" class="btn btn-primary w-100">
+                    Dispatch Recovery Code
+                </button>
+
+                <p class="toggle-auth"><a href="#" id="link-back-login"><i data-lucide="arrow-left"></i> Return to login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MAIN APPLICATION INTERFACE -->
+    <div id="app-screen" class="app-container hidden">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-brand">
+                <div class="logo-glow-dot"></div>
+                <h2>ASSET<span class="gradient-text">FLOW</span></h2>
+                <span class="badge erp-badge">GOLD EDITION</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-screen="dashboard">
+                    <i data-lucide="layout-dashboard"></i> Dashboard
+                </a>
+                <a href="#" class="nav-item admin-only" data-screen="org-setup">
+                    <i data-lucide="sliders"></i> Organization Setup
+                </a>
+                <a href="#" class="nav-item" data-screen="assets">
+                    <i data-lucide="database"></i> Asset Directory
+                </a>
+                <a href="#" class="nav-item" data-screen="allocations">
+                    <i data-lucide="git-pull-request"></i> Custody & Transfers
+                </a>
+                <a href="#" class="nav-item" data-screen="bookings">
+                    <i data-lucide="calendar"></i> Resource Bookings
+                </a>
+                <a href="#" class="nav-item" data-screen="maintenance">
+                    <i data-lucide="wrench"></i> Repairs Queue
+                </a>
+                <a href="#" class="nav-item" data-screen="audits">
+                    <i data-lucide="clipboard-check"></i> Compliance Audits
+                </a>
+                <a href="#" class="nav-item" data-screen="reports">
+                    <i data-lucide="line-chart"></i> Reports & Analytics
+                </a>
+                <a href="#" class="nav-item" data-screen="notifications">
+                    <i data-lucide="bell"></i> Security Logs
+                </a>
+            </nav>
+
+            <div class="sidebar-user glass-panel">
+                <div class="user-avatar-wrapper">
+                    <div class="user-avatar">
+                        <span id="user-avatar-initials">PS</span>
+                    </div>
+                    <div class="avatar-status-dot active"></div>
+                </div>
+                <div class="user-details">
+                    <div id="user-display-name" class="user-name">Loading...</div>
+                    <div id="user-display-role" class="user-role-badge">Loading...</div>
+                </div>
+                <button id="btn-logout" class="btn-logout" title="Exit Workspace">
+                    <i data-lucide="log-out"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN LAYOUT CONTENT -->
+        <div class="main-layout">
+            
+            <!-- HEADER -->
+            <header class="main-header glass-panel">
+                <div class="header-title-area">
+                    <h1 id="screen-title">Operational Snapshot</h1>
+                    <p id="screen-subtitle" class="sub-text">Loading ledger metadata...</p>
+                </div>
+
+                <div class="header-actions">
+                    <!-- Quick Actions -->
+                    <div class="quick-actions-bar">
+                        <button class="btn btn-primary btn-sm asset-manager-only" id="header-btn-register-asset">
+                            <i data-lucide="plus-circle"></i> Register Asset
+                        </button>
+                        <button class="btn btn-secondary btn-sm" id="header-btn-book-resource">
+                            <i data-lucide="calendar-plus"></i> Book Space
+                        </button>
+                    </div>
+
+                    <!-- Sandbox Testing Role Switcher -->
+                    <div class="role-switcher-box glass-panel">
+                        <label for="demo-role-select"><i data-lucide="shield-alert" class="warning-text"></i> Demo Role:</label>
+                        <select id="demo-role-select" class="premium-select select-sm">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+
+                    <!-- Notifications Dropdown Trigger -->
+                    <div class="notif-bell" id="btn-header-notif">
+                        <i data-lucide="bell"></i>
+                        <span id="header-notif-badge" class="notif-badge hidden">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT PANEL ROUTER -->
+            <main class="content-area">
+
+                <!-- SCREEN: DASHBOARD -->
+                <section class="tab-panel active" id="screen-dashboard">
+                    <!-- KPI Cards Grid -->
+                    <div class="kpis-grid">
+                        <div class="kpi-card glass-panel border-emerald">
+                            <div class="kpi-glow-bg emerald"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Assets Available</span>
+                                <i data-lucide="check-circle" class="success-text"></i>
+                            </div>
+                            <div id="kpi-available" class="kpi-value success-text">0</div>
+                            <span class="kpi-footer">Ready for deployment</span>
+                        </div>
+                        <div class="kpi-card glass-panel border-cyan">
+                            <div class="kpi-glow-bg cyan"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Assets Allocated</span>
+                                <i data-lucide="user-check" class="cyan-text"></i>
+                            </div>
+                            <div id="kpi-allocated" class="kpi-value cyan-text">0</div>
+                            <span class="kpi-footer">Deployed in custody</span>
+                        </div>
+                        <div class="kpi-card glass-panel border-amber">
+                            <div class="kpi-glow-bg amber"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Repairs Today</span>
+                                <i data-lucide="wrench" class="warning-text"></i>
+                            </div>
+                            <div id="kpi-maintenance" class="kpi-value warning-text">0</div>
+                            <span class="kpi-footer">Active refurbishments</span>
+                        </div>
+                        <div class="kpi-card glass-panel border-indigo">
+                            <div class="kpi-glow-bg indigo"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Active Bookings</span>
+                                <i data-lucide="calendar" class="gold-text"></i>
+                            </div>
+                            <div id="kpi-bookings" class="kpi-value gold-text">0</div>
+                            <span class="kpi-footer">Ongoing rental slots</span>
+                        </div>
+                        <div class="kpi-card glass-panel border-purple">
+                            <div class="kpi-glow-bg purple"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Pending Transfers</span>
+                                <i data-lucide="arrow-left-right" class="purple-text"></i>
+                            </div>
+                            <div id="kpi-transfers" class="kpi-value purple-text">0</div>
+                            <span class="kpi-footer">Awaiting authorization</span>
+                        </div>
+                        <div class="kpi-card glass-panel border-rose">
+                            <div class="kpi-glow-bg rose"></div>
+                            <div class="kpi-header">
+                                <span class="kpi-title">Overdue Returns</span>
+                                <i data-lucide="clock" class="alert-text animate-pulse"></i>
+                            </div>
+                            <div id="kpi-overdue" class="kpi-value alert-text animate-pulse">0</div>
+                            <span class="kpi-footer alert-text">Overdue recovery actions</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Columns -->
+                    <div class="dashboard-columns mt-4">
+                        <!-- Left Panel: Overdue returns list -->
+                        <div class="dashboard-left glass-panel">
+                            <div class="panel-header-row border-bottom pb-2 mb-3">
+                                <h3 class="panel-section-title"><i data-lucide="alert-triangle" class="alert-text animate-pulse"></i> Active Overdue Custody Alerts</h3>
+                                <span class="badge badge-danger" id="lbl-overdue-count">0 Alerts</span>
+                            </div>
+                            <p class="description">Holdings kept beyond their expected return dates.</p>
+                            <div class="overdue-list-container mt-2" id="dashboard-overdue-list">
+                                <div class="empty-state">No overdue items active</div>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Personal list and Alerts -->
+                        <div class="dashboard-right">
+                            <!-- Personal Allocated Assets -->
+                            <div class="glass-panel mb-4">
+                                <div class="panel-header-row border-bottom pb-2 mb-3">
+                                    <h3 class="panel-section-title"><i data-lucide="user"></i> Assets in Your Custody</h3>
+                                </div>
+                                <div class="personal-assets-container mt-2" id="dashboard-personal-assets">
+                                    <div class="empty-state text-sm">No assets assigned to your profile</div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Notifications -->
+                            <div class="glass-panel">
+                                <div class="panel-header-row border-bottom pb-2 mb-3">
+                                    <h3 class="panel-section-title"><i data-lucide="bell"></i> System Alert Log</h3>
+                                    <a href="#" class="text-link-sm" onclick="switchTab('notifications')">View ledger</a>
+                                </div>
+                                <div class="dashboard-notif-list mt-2" id="dashboard-notif-list">
+                                    <div class="empty-state text-sm">No recent alerts</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: ORG SETUP (Admin only) -->
+                <section class="tab-panel" id="screen-org-setup">
+                    <div class="inner-tabs-header glass-panel mb-4">
+                        <button class="inner-tab-btn active" data-subtab="org-depts">
+                            <i data-lucide="building"></i> Departments
+                        </button>
+                        <button class="inner-tab-btn" data-subtab="org-categories">
+                            <i data-lucide="tag"></i> Asset Categories
+                        </button>
+                        <button class="inner-tab-btn" data-subtab="org-employees">
+                            <i data-lucide="users"></i> Employee Directory
+                        </button>
+                    </div>
+
+                    <!-- Org Tab A: Departments -->
+                    <div class="inner-tab-content active" id="org-depts">
+                        <div class="actions-header mb-3">
+                            <h2>Department Hierarchy</h2>
+                            <button class="btn btn-primary btn-sm" id="btn-add-dept">
+                                <i data-lucide="plus"></i> Add Department
+                            </button>
+                        </div>
+                        <div class="table-container glass-panel">
+                            <table class="premium-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Department Name</th>
+                                        <th>Head of Department</th>
+                                        <th>Parent Level</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="depts-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Org Tab B: Categories -->
+                    <div class="inner-tab-content" id="org-categories">
+                        <div class="actions-header mb-3">
+                            <h2>Asset Classification Categories</h2>
+                            <button class="btn btn-primary btn-sm" id="btn-add-category">
+                                <i data-lucide="plus"></i> Add Category
+                            </button>
+                        </div>
+                        <div class="table-container glass-panel">
+                            <table class="premium-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Category Name</th>
+                                        <th>Custom Schema Parameter Fields</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="categories-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Org Tab C: Employee Directory -->
+                    <div class="inner-tab-content" id="org-employees">
+                        <div class="actions-header mb-3">
+                            <h2>Organization Employee Directory</h2>
+                            <p class="description">Admin role promote and demote permissions are restricted here.</p>
+                        </div>
+                        <div class="table-container glass-panel">
+                            <table class="premium-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email Address</th>
+                                        <th>Department</th>
+                                        <th>Rbac Clearance Role</th>
+                                        <th>Account Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="employees-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: ASSET DIRECTORY -->
+                <section class="tab-panel" id="screen-assets">
+                    <!-- Filters Panel -->
+                    <div class="filter-bar glass-panel mb-4">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="asset-search" placeholder="Search Tag, Name, Serial Number, Location...">
+                        </div>
+                        <div class="filter-group">
+                            <select id="asset-filter-category" class="premium-select select-sm">
+                                <option value="">All Categories</option>
+                            </select>
+                            <select id="asset-filter-status" class="premium-select select-sm">
+                                <option value="">All Statuses</option>
+                                <option value="Available">Available</option>
+                                <option value="Allocated">Allocated</option>
+                                <option value="Under Maintenance">Under Maintenance</option>
+                                <option value="Lost">Lost</option>
+                                <option value="Retired">Retired</option>
+                                <option value="Disposed">Disposed</option>
+                            </select>
+                            <select id="asset-filter-bookable" class="premium-select select-sm">
+                                <option value="">All Scopes</option>
+                                <option value="non-bookable">Allocated Holdings</option>
+                                <option value="bookable">Shared Bookable Resources</option>
+                            </select>
+                            
+                            <!-- QR Code Scan Button -->
+                            <button class="btn btn-secondary btn-sm" id="btn-scan-qr" title="Scan Asset QR Tag">
+                                <i data-lucide="qr-code" class="gold-text"></i> Scan Tag
+                            </button>
+                        </div>
+                        <button class="btn btn-primary btn-sm asset-manager-only" id="btn-register-asset">
+                            <i data-lucide="plus"></i> Register Asset
+                        </button>
+                    </div>
+
+                    <!-- Assets List Table -->
+                    <div class="table-container glass-panel">
+                        <table class="premium-table">
+                            <thead>
+                                <tr>
+                                    <th>Asset Tag</th>
+                                    <th>Asset Name</th>
+                                    <th>Category</th>
+                                    <th>Location</th>
+                                    <th>Custody Type</th>
+                                    <th>Condition</th>
+                                    <th>Status</th>
+                                    <th>Custodian</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assets-table-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SCREEN: ALLOCATIONS & TRANSFERS -->
+                <section class="tab-panel" id="screen-allocations">
+                    <div class="dashboard-columns">
+                        <!-- Left side: Allocations list -->
+                        <div class="dashboard-left flex-2 glass-panel mr-3">
+                            <div class="actions-header mb-3">
+                                <h2>Active Custody Registry</h2>
+                                <button class="btn btn-primary btn-sm asset-manager-only" id="btn-open-allocate-modal">
+                                    <i data-lucide="user-plus"></i> Allocate Asset
+                                </button>
+                            </div>
+                            
+                            <div class="table-container-inner">
+                                <table class="premium-table text-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Asset Name</th>
+                                            <th>Tag</th>
+                                            <th>Assigned To</th>
+                                            <th>Allocated On</th>
+                                            <th>Expected Return</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="allocations-table-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Right side: Transfer workflows -->
+                        <div class="dashboard-right flex-1 glass-panel">
+                            <div class="actions-header mb-2 border-bottom pb-2">
+                                <h2>Direct Custody Transfers</h2>
+                            </div>
+                            <p class="description mb-3">Workflow approvals for routing assets between operators.</p>
+                            
+                            <div class="transfer-requests-list" id="transfers-list-container">
+                                <div class="empty-state text-sm">No transfer requests pending</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: RESOURCE BOOKING -->
+                <section class="tab-panel" id="screen-bookings">
+                    <div class="dashboard-columns">
+                        <!-- Left: Resource Picker and Booking calendar visual -->
+                        <div class="dashboard-left flex-2 glass-panel mr-3">
+                            <div class="actions-header mb-3">
+                                <h2>Interactive Resource Schedule</h2>
+                                <div class="resource-selector-bar">
+                                    <label for="booking-resource-select">Resource:</label>
+                                    <select id="booking-resource-select" class="premium-select select-sm"></select>
+                                    
+                                    <!-- Valued Interactive Feature: Calendar Date Picker -->
+                                    <label for="booking-date-select">Schedule Date:</label>
+                                    <input type="date" id="booking-date-select" class="premium-input select-sm" style="width: 140px;">
+                                </div>
+                            </div>
+
+                            <!-- Simulated day calendar timeline -->
+                            <div class="calendar-timeline-container">
+                                <h3 id="timeline-resource-title" class="mb-2">Resource Schedule</h3>
+                                <div class="timeline-day-header">
+                                    <span id="timeline-date-label">Timeline for Today (09:00 - 18:00)</span>
+                                </div>
+                                <div class="timeline-grid" id="timeline-hours-grid"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Active Booking lists and new booking form -->
+                        <div class="dashboard-right flex-1 glass-panel">
+                            <div class="actions-header mb-3 border-bottom pb-2">
+                                <h2>Reserve Shared Space</h2>
+                            </div>
+                            <form id="booking-form" class="mt-2">
+                                <div class="form-group">
+                                    <label for="book-asset-id">Resource</label>
+                                    <select id="book-asset-id" class="premium-select" required>
+                                        <option value="">Select Resource...</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group flex-1 mr-2">
+                                        <label for="book-start-time">Start Time</label>
+                                        <input type="datetime-local" id="book-start-time" class="premium-input" required>
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label for="book-end-time">End Time</label>
+                                        <input type="datetime-local" id="book-end-time" class="premium-input" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 btn-sm mt-2">
+                                    <i data-lucide="check"></i> Confirm Reservation
+                                </button>
+                            </form>
+
+                            <hr class="divider mt-4 mb-4">
+
+                            <h3>Active Bookings</h3>
+                            <div class="active-bookings-list mt-2" id="active-bookings-list-container">
+                                <div class="empty-state text-sm">No reservations active</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: MAINTENANCE -->
+                <section class="tab-panel" id="screen-maintenance">
+                    <div class="actions-header mb-3">
+                        <h2>Repair & Refurbishment Tickets</h2>
+                        <button class="btn btn-primary btn-sm" id="btn-raise-repair">
+                            <i data-lucide="plus"></i> File Repair Request
+                        </button>
+                    </div>
+
+                    <!-- Maintenance Grid -->
+                    <div class="table-container glass-panel">
+                        <table class="premium-table">
+                            <thead>
+                                <tr>
+                                    <th>Ticket ID</th>
+                                    <th>Asset Tag</th>
+                                    <th>Asset Name</th>
+                                    <th>Priority</th>
+                                    <th>Failure Notes</th>
+                                    <th>Raised By</th>
+                                    <th>Assigned Tech</th>
+                                    <th>Status</th>
+                                    <th>Workflow Actions (Asset Managers)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="maintenance-table-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SCREEN: ASSET AUDITS -->
+                <section class="tab-panel" id="screen-audits">
+                    <div class="dashboard-columns">
+                        <!-- Left: Audit cycles list & new audit form -->
+                        <div class="dashboard-left flex-1 glass-panel mr-3">
+                            <div class="actions-header mb-3">
+                                <h2>Audit Cycles</h2>
+                                <button class="btn btn-primary btn-sm admin-only" id="btn-create-audit-modal">
+                                    <i data-lucide="plus"></i> Schedule Audit Cycle
+                                </button>
+                            </div>
+                            
+                            <div class="audit-cycles-list" id="audit-cycles-list-container">
+                                <div class="empty-state text-sm">No audit runs created</div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Active Audit verification panel (Auditor/Manager view) -->
+                        <div class="dashboard-right flex-2 glass-panel">
+                            <div class="actions-header mb-3">
+                                <h2>Audit Workspace Verification</h2>
+                                <span id="lbl-active-audit-title" class="badge">Select audit cycle</span>
+                            </div>
+
+                            <div id="audit-verification-workspace" class="hidden">
+                                <div class="audit-meta-row mb-3 pb-2 border-bottom">
+                                    <span><strong>Assigned Auditors:</strong> <span id="val-audit-auditors">-</span></span>
+                                    <span><strong>Verification Rate:</strong> <span id="val-audit-progress">0/0 Verified</span></span>
+                                </div>
+                                <div class="table-container-inner max-h-400">
+                                    <table class="premium-table text-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Asset Tag</th>
+                                                <th>Asset Name</th>
+                                                <th>Location</th>
+                                                <th>Last Condition</th>
+                                                <th>Verification Status</th>
+                                                <th>Inspector Notes</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="audit-verify-table-body"></tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="audit-workspace-actions mt-3">
+                                    <button class="btn btn-emerald btn-glow btn-sm asset-manager-only" id="btn-close-audit-cycle">
+                                        <i data-lucide="check-square"></i> Finalize Discrepancy & Close Audit
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="audit-workspace-empty" class="empty-state">
+                                <i data-lucide="clipboard-list" class="large-icon"></i>
+                                <h3>Select an active audit cycle from the list to begin verification.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: REPORTS & ANALYTICS -->
+                <section class="tab-panel" id="screen-reports">
+                    <div class="actions-header mb-4">
+                        <h2>Analytics Reports & Ledger</h2>
+                        <button class="btn btn-secondary btn-sm" id="btn-export-assets-csv">
+                            <i data-lucide="download"></i> Download CSV Ledger
+                        </button>
+                    </div>
+
+                    <!-- Charts Grid -->
+                    <div class="charts-grid mb-4">
+                        <div class="chart-card glass-panel">
+                            <h3>Asset Status Distribution (Utilization)</h3>
+                            <div class="chart-container">
+                                <canvas id="chart-status-dist"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card glass-panel">
+                            <h3>Maintenance Frequency (Top Assets)</h3>
+                            <div class="chart-container">
+                                <canvas id="chart-maint-freq"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card glass-panel">
+                            <h3>Department Allocations Breakdown</h3>
+                            <div class="chart-container">
+                                <canvas id="chart-dept-alloc"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card glass-panel">
+                            <h3>Booking Heatmap (Time Windows)</h3>
+                            <div class="chart-container">
+                                <canvas id="chart-booking-heatmap"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nearing retirement panel -->
+                    <div class="glass-panel">
+                        <h3>Assets Nearing Retirement (Condition: Poor / Age &ge; 2 yrs)</h3>
+                        <p class="description">Compliance recommendation index for deprecating hardware.</p>
+                        <div class="table-container mt-3">
+                            <table class="premium-table text-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Asset Tag</th>
+                                        <th>Asset Name</th>
+                                        <th>Acquisition Date</th>
+                                        <th>Condition</th>
+                                        <th>Asset Age (Years)</th>
+                                        <th>Action Recommendation</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="retirement-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN: NOTIFICATIONS & AUDIT LOG -->
+                <section class="tab-panel" id="screen-notifications">
+                    <div class="dashboard-columns">
+                        <!-- Left: Full Notification Log -->
+                        <div class="dashboard-left flex-1 glass-panel mr-3">
+                            <div class="actions-header mb-3 border-bottom pb-2">
+                                <h2>System Alerts History</h2>
+                            </div>
+                            <div class="notif-history-container" id="notif-history-list"></div>
+                        </div>
+
+                        <!-- Right: Activity Logs (Admin only) -->
+                        <div class="dashboard-right flex-2 glass-panel">
+                            <div class="actions-header mb-3 border-bottom pb-2">
+                                <h2>Security Audit Trail (Admin Only)</h2>
+                                <span class="badge erp-badge">Transaction ledger</span>
+                            </div>
+                            
+                            <div class="table-container-inner max-h-500">
+                                <table class="premium-table text-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>Operator</th>
+                                            <th>Role</th>
+                                            <th>Action Type</th>
+                                            <th>Transaction Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="activity-logs-table-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals Section -->
+
+    <!-- SIMULATED QR CODE SCANNER MODAL -->
+    <div class="modal-overlay hidden" id="modal-qr-scanner">
+        <div class="modal-card glass-panel" style="max-width: 400px; text-align: center;">
+            <button class="modal-close" onclick="closeModal('modal-qr-scanner')"><i data-lucide="x"></i></button>
+            <div class="modal-header" style="justify-content: center; flex-direction: column;">
+                <div class="scanner-header-icon"><i data-lucide="scan-line" class="gold-text"></i></div>
+                <h2>Simulated QR Scanner</h2>
+                <p>Initializing hardware camera feed...</p>
+            </div>
+            
+            <div class="qr-scanner-viewport glass-panel">
+                <div class="qr-scan-line"></div>
+                <div class="qr-corners"></div>
+                <div class="qr-placeholder-text">SCANNING TAG...</div>
+            </div>
+            
+            <div class="qr-scanner-status mt-3 text-sm text-secondary" id="qr-scan-status-text">
+                Point camera at asset QR Tag or click scan target.
+            </div>
+
+            <div class="qr-scanner-targets mt-2">
+                <button class="btn btn-secondary btn-sm w-100" id="btn-qr-target-simulate">
+                    <i data-lucide="sparkles"></i> Scan AF-0001 (Laptop)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: REGISTER ASSET -->
+    <div class="modal-overlay hidden" id="modal-register-asset">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-register-asset')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Register Physical Asset</h2>
+                <p>Insert physical resource details into the ERP database catalog.</p>
+            </div>
+            <form id="form-register-asset">
+                <div class="form-group">
+                    <label for="reg-name">Asset Name</label>
+                    <input type="text" id="reg-name" class="premium-input" placeholder="e.g. MacBook Pro 16\"" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="reg-category">Category</label>
+                        <select id="reg-category" class="premium-select" required></select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="reg-serial">Serial Number</label>
+                        <input type="text" id="reg-serial" class="premium-input" placeholder="e.g. C02XYZ12345" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="reg-acq-date">Acquisition Date</label>
+                        <input type="date" id="reg-acq-date" class="premium-input" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="reg-acq-cost">Acquisition Cost ($)</label>
+                        <input type="number" id="reg-acq-cost" step="0.01" class="premium-input" placeholder="e.g. 1499.00" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="reg-condition">Initial Condition</label>
+                        <select id="reg-condition" class="premium-select" required>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="reg-location">Default Storage Location</label>
+                        <input type="text" id="reg-location" class="premium-input" placeholder="e.g. HQ - Floor 3 - IT Lab" required>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="reg-shared-bookable">
+                    <label for="reg-shared-bookable">Mark as a Shared Bookable Resource (e.g. room, vehicle pool)</label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-register-asset')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Save Asset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ALLOCATE ASSET -->
+    <div class="modal-overlay hidden" id="modal-allocate-asset">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-allocate-asset')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Allocate Custody</h2>
+                <p>Transfer possession of an asset directly to an employee or department.</p>
+            </div>
+            <form id="form-allocate-asset">
+                <div class="form-group">
+                    <label for="alloc-asset-select">Select Asset</label>
+                    <select id="alloc-asset-select" class="premium-select" required></select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="alloc-holder-type">Holder Type</label>
+                        <select id="alloc-holder-type" class="premium-select" required>
+                            <option value="Employee">Employee</option>
+                            <option value="Department">Department</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="alloc-holder-select" id="lbl-alloc-holder-id">Holder</label>
+                        <select id="alloc-holder-select" class="premium-select" required></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="alloc-return-date">Expected Return Date (Optional)</label>
+                    <input type="date" id="alloc-return-date" class="premium-input">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-allocate-asset')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Confirm Allocation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ASSET DETAILS & HISTORY -->
+    <div class="modal-overlay hidden" id="modal-asset-detail">
+        <div class="modal-card glass-panel modal-lg">
+            <button class="modal-close" onclick="closeModal('modal-asset-detail')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <div class="modal-badge-rank" id="det-tag">-</div>
+                <div>
+                    <h2 id="det-name">-</h2>
+                    <p class="modal-subtitle" id="det-category-location">-</p>
+                </div>
+            </div>
+            
+            <div class="modal-body max-h-500">
+                <div class="modal-cols">
+                    <!-- Left: Metadata -->
+                    <div class="modal-col-left">
+                        <div class="profile-block">
+                            <h3><i data-lucide="info"></i> Technical Details</h3>
+                            <div class="metrics-list mt-2">
+                                <div class="metric-row">
+                                    <span class="label">Serial Number</span>
+                                    <span class="value" id="det-serial">-</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="label">Condition</span>
+                                    <span class="value" id="det-condition">-</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="label">Lifecycle Status</span>
+                                    <span class="value" id="det-status">-</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="label">Acquisition Cost</span>
+                                    <span class="value" id="det-cost">-</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="label">Acquisition Date</span>
+                                    <span class="value" id="det-date">-</span>
+                                </div>
+                                <div id="det-custom-fields" class="mt-2"></div>
+                            </div>
+                        </div>
+
+                        <!-- Action controls -->
+                        <div class="profile-block mt-3 border-glow-box" id="det-action-block">
+                            <h3><i data-lucide="git-pull-request"></i> Action Controls</h3>
+                            <div class="det-action-buttons mt-2" id="det-action-buttons-container"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: History -->
+                    <div class="modal-col-right">
+                        <div class="profile-block">
+                            <h3><i data-lucide="history"></i> Custody History Ledger</h3>
+                            <div class="timeline mt-2" id="det-alloc-timeline">
+                                <div class="empty-state">No history logs recorded</div>
+                            </div>
+                        </div>
+
+                        <div class="profile-block mt-3">
+                            <h3><i data-lucide="wrench"></i> Maintenance & Repair Logs</h3>
+                            <div class="timeline mt-2" id="det-maint-timeline">
+                                <div class="empty-state">No repair logs recorded</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: RETURN ASSET -->
+    <div class="modal-overlay hidden" id="modal-return-asset">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-return-asset')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Asset Return Check-in</h2>
+                <p>Record observations and update hardware condition upon return.</p>
+            </div>
+            <form id="form-return-asset">
+                <input type="hidden" id="return-asset-id">
+                <div class="form-group">
+                    <label for="return-condition">Check-in Condition</label>
+                    <select id="return-condition" class="premium-select" required>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Good">Good</option>
+                        <option value="Fair">Fair</option>
+                        <option value="Poor">Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="return-notes">Check-in Assessment Notes</label>
+                    <textarea id="return-notes" class="premium-input h-80" placeholder="e.g. Returned clean, cables present, slight scratches on casing." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-return-asset')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Process Return</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ADD DEPARTMENT (Admin) -->
+    <div class="modal-overlay hidden" id="modal-add-dept">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-add-dept')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2 id="modal-dept-title">Create Department</h2>
+            </div>
+            <form id="form-add-dept">
+                <input type="hidden" id="dept-edit-id">
+                <div class="form-group">
+                    <label for="dept-name">Department Name</label>
+                    <input type="text" id="dept-name" class="premium-input" placeholder="e.g. Sales" required>
+                </div>
+                <div class="form-group">
+                    <label for="dept-code">Department Code</label>
+                    <input type="text" id="dept-code" class="premium-input" placeholder="e.g. MKT" required>
+                </div>
+                <div class="form-group">
+                    <label for="dept-head">Department Head</label>
+                    <select id="dept-head" class="premium-select"></select>
+                </div>
+                <div class="form-group">
+                    <label for="dept-parent">Parent Department (For Hierarchy)</label>
+                    <select id="dept-parent" class="premium-select"></select>
+                </div>
+                <div class="form-group">
+                    <label for="dept-status">Status</label>
+                    <select id="dept-status" class="premium-select">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-add-dept')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Save Department</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ADD CATEGORY (Admin) -->
+    <div class="modal-overlay hidden" id="modal-add-category">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-add-category')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Create Asset Category</h2>
+            </div>
+            <form id="form-add-category">
+                <div class="form-group">
+                    <label for="cat-name">Category Name</label>
+                    <input type="text" id="cat-name" class="premium-input" placeholder="e.g. Servers" required>
+                </div>
+                <div class="form-group">
+                    <label for="cat-code">Category Code</label>
+                    <input type="text" id="cat-code" class="premium-input" placeholder="e.g. SVR" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Category-Specific Schema (JSON format, Optional)</label>
+                    <p class="description">Add schema params as a JSON object of key-value descriptions (e.g. {"warranty_months": "24"})</p>
+                    <textarea id="cat-fields" class="premium-input h-80" placeholder='{"warranty_months": "24", "cpu": "Intel Xeon"}'></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-add-category')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: RAISE MAINTENANCE REQUEST -->
+    <div class="modal-overlay hidden" id="modal-raise-maint">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-raise-maint')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Raise Maintenance Request</h2>
+                <p>Report hardware issues or malfunctions to route through the approval workflow.</p>
+            </div>
+            <form id="form-raise-maint">
+                <div class="form-group">
+                    <label for="maint-asset-select">Select Asset</label>
+                    <select id="maint-asset-select" class="premium-select" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="maint-priority">Repair Priority</label>
+                    <select id="maint-priority" class="premium-select" required>
+                        <option value="Low">Low - Cosmetic/Minor wear</option>
+                        <option value="Medium" selected>Medium - Functional defect</option>
+                        <option value="High">High - Blocking hardware failure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="maint-desc">Describe Failure Details</label>
+                    <textarea id="maint-desc" class="premium-input h-80" placeholder="Describe screen issues, broken hinges, engine warning light, etc." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-raise-maint')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: SCHEDULE AUDIT CYCLE -->
+    <div class="modal-overlay hidden" id="modal-create-audit">
+        <div class="modal-card glass-panel">
+            <button class="modal-close" onclick="closeModal('modal-create-audit')"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Schedule Audit Cycle</h2>
+                <p>Launch a scheduled inventory verification audit cycle.</p>
+            </div>
+            <form id="form-create-audit">
+                <div class="form-group">
+                    <label for="audit-name">Audit Cycle Title</label>
+                    <input type="text" id="audit-name" class="premium-input" placeholder="e.g. Q3 HQ Electronic Audit" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="audit-dept">Department Scope (Optional)</label>
+                        <select id="audit-dept" class="premium-select">
+                            <option value="">All Departments</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="audit-location">Location Scope (Optional)</label>
+                        <input type="text" id="audit-location" class="premium-input" placeholder="e.g. Floor 3">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-1 mr-2">
+                        <label for="audit-start">Audit Start Date</label>
+                        <input type="date" id="audit-start" class="premium-input" required>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="audit-end">Audit End Date</label>
+                        <input type="date" id="audit-end" class="premium-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="audit-auditors">Assigned Auditors</label>
+                    <select id="audit-auditors" class="premium-select" multiple required size="4"></select>
+                    <p class="description">Hold Ctrl (Windows) / Cmd (Mac) to select multiple auditors.</p>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="closeModal('modal-create-audit')">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Schedule Audit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Source JS -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

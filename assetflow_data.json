@@ -1,0 +1,1412 @@
+{
+  "departments": [
+    {
+      "id": "dept-1",
+      "name": "IT Infrastructure",
+      "code": "IT-INF",
+      "department_head_id": "priya@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-2",
+      "name": "Human Resources",
+      "code": "HR",
+      "department_head_id": "sarah@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-3",
+      "name": "Facilities & Operations",
+      "code": "FAC-OPS",
+      "department_head_id": "john@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-4",
+      "name": "Software Engineering",
+      "code": "SW-DEV",
+      "department_head_id": "raj@assetflow.com",
+      "parent_department_id": "dept-1",
+      "status": "Active"
+    },
+    {
+      "id": "dept-5",
+      "name": "Legal & Compliance",
+      "code": "LEGAL",
+      "department_head_id": "clara@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-6",
+      "name": "Finance & Procurement",
+      "code": "FIN-PRO",
+      "department_head_id": "stephen@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-7",
+      "name": "Marketing & Communications",
+      "code": "MKT-COM",
+      "department_head_id": "peter@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-8",
+      "name": "Sales & Accounts",
+      "code": "SALES",
+      "department_head_id": "thor@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    },
+    {
+      "id": "dept-9",
+      "name": "Executive Board",
+      "code": "EXEC",
+      "department_head_id": "bruce@assetflow.com",
+      "parent_department_id": null,
+      "status": "Active"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Electronics",
+      "code": "ELEC",
+      "specific_fields": {
+        "warranty_months": "24",
+        "power_specs": "USB-C PD 100W"
+      }
+    },
+    {
+      "id": "cat-2",
+      "name": "Furniture",
+      "code": "FURN",
+      "specific_fields": {
+        "material": "Ergonomic Mesh",
+        "ergonomic": "Yes"
+      }
+    },
+    {
+      "id": "cat-3",
+      "name": "Vehicles",
+      "code": "VEH",
+      "specific_fields": {
+        "fuel_type": "Electric",
+        "range_miles": "320"
+      }
+    },
+    {
+      "id": "cat-4",
+      "name": "Shared Spaces",
+      "code": "SPACE",
+      "specific_fields": {
+        "capacity": "15",
+        "amenities": "Projector, VC Studio, Whiteboard"
+      }
+    },
+    {
+      "id": "cat-5",
+      "name": "Specialized Tooling",
+      "code": "TOOL",
+      "specific_fields": {
+        "calibration_due": "2027-01-01",
+        "voltage": "220V"
+      }
+    },
+    {
+      "id": "cat-6",
+      "name": "Mobile Devices",
+      "code": "MOB",
+      "specific_fields": {
+        "carrier": "Unlocked",
+        "OS": "iOS"
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@assetflow.com",
+      "name": "System Admin",
+      "password": "password123",
+      "department_id": "dept-3",
+      "role": "Asset Manager",
+      "status": "Active"
+    },
+    {
+      "email": "manager@assetflow.com",
+      "name": "Marcus Vance",
+      "password": "password123",
+      "department_id": "dept-1",
+      "role": "Asset Manager",
+      "status": "Active"
+    },
+    {
+      "email": "priya@assetflow.com",
+      "name": "Priya Sharma",
+      "password": "password123",
+      "department_id": "dept-1",
+      "role": "Department Head",
+      "status": "Active"
+    },
+    {
+      "email": "sarah@assetflow.com",
+      "name": "Sarah Jenkins",
+      "password": "password123",
+      "department_id": "dept-2",
+      "role": "Department Head",
+      "status": "Active"
+    },
+    {
+      "email": "john@assetflow.com",
+      "name": "John Doe",
+      "password": "password123",
+      "department_id": "dept-3",
+      "role": "Department Head",
+      "status": "Active"
+    },
+    {
+      "email": "clara@assetflow.com",
+      "name": "Clara Oswald",
+      "password": "password123",
+      "department_id": "dept-5",
+      "role": "Department Head",
+      "status": "Active"
+    },
+    {
+      "email": "bruce@assetflow.com",
+      "name": "Bruce Wayne",
+      "password": "password123",
+      "department_id": "dept-9",
+      "role": "Department Head",
+      "status": "Active"
+    },
+    {
+      "email": "raj@assetflow.com",
+      "name": "Raj Patel",
+      "password": "password123",
+      "department_id": "dept-4",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "sam@assetflow.com",
+      "name": "Sam Wilson",
+      "password": "password123",
+      "department_id": "dept-1",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "peter@assetflow.com",
+      "name": "Peter Parker",
+      "password": "password123",
+      "department_id": "dept-7",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "tony@assetflow.com",
+      "name": "Tony Stark",
+      "password": "password123",
+      "department_id": "dept-4",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "natasha@assetflow.com",
+      "name": "Natasha Romanoff",
+      "password": "password123",
+      "department_id": "dept-5",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "steve@assetflow.com",
+      "name": "Steve Rogers",
+      "password": "password123",
+      "department_id": "dept-3",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "wanda@assetflow.com",
+      "name": "Wanda Maximoff",
+      "password": "password123",
+      "department_id": "dept-2",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "thor@assetflow.com",
+      "name": "Thor Odinson",
+      "password": "password123",
+      "department_id": "dept-8",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "loki@assetflow.com",
+      "name": "Loki Laufeyson",
+      "password": "password123",
+      "department_id": "dept-8",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "clint@assetflow.com",
+      "name": "Clint Barton",
+      "password": "password123",
+      "department_id": "dept-6",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "carol@assetflow.com",
+      "name": "Carol Danvers",
+      "password": "password123",
+      "department_id": "dept-9",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "stephen@assetflow.com",
+      "name": "Stephen Strange",
+      "password": "password123",
+      "department_id": "dept-6",
+      "role": "Employee",
+      "status": "Active"
+    },
+    {
+      "email": "diana@assetflow.com",
+      "name": "Diana Prince",
+      "password": "password123",
+      "department_id": "dept-5",
+      "role": "Employee",
+      "status": "Active"
+    }
+  ],
+  "assets": [
+    {
+      "id": "AF-0001",
+      "name": "MacBook Pro M3 Max 16\"",
+      "category_id": "cat-1",
+      "serial_number": "C02XYZ12345",
+      "acquisition_date": "2025-10-15",
+      "acquisition_cost": 3499.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "priya@assetflow.com",
+      "expected_return_date": "2026-09-30"
+    },
+    {
+      "id": "AF-0002",
+      "name": "Dell XPS 15 9530",
+      "category_id": "cat-1",
+      "serial_number": "DXYZ7891011",
+      "acquisition_date": "2025-11-20",
+      "acquisition_cost": 2199.0,
+      "condition": "Good",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "admin@assetflow.com",
+      "expected_return_date": "2026-07-08"
+    },
+    {
+      "id": "AF-0003",
+      "name": "Conference Room A",
+      "category_id": "cat-4",
+      "serial_number": "ROOM-CONF-A",
+      "acquisition_date": "2024-01-01",
+      "acquisition_cost": 0.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 2 - West Wing",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0004",
+      "name": "Tesla Model Y LR",
+      "category_id": "cat-3",
+      "serial_number": "5YJYXC1E7LFXXXXXX",
+      "acquisition_date": "2024-06-15",
+      "acquisition_cost": 48990.0,
+      "condition": "Excellent",
+      "location": "HQ - Parking Garage B1",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0005",
+      "name": "Herman Miller Aeron Chair",
+      "category_id": "cat-2",
+      "serial_number": "HM-AERON-7892",
+      "acquisition_date": "2024-08-01",
+      "acquisition_cost": 1200.0,
+      "condition": "Fair",
+      "location": "HQ - Floor 4 - Dev Area",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "raj@assetflow.com",
+      "expected_return_date": "2026-06-30"
+    },
+    {
+      "id": "AF-0006",
+      "name": "iPad Pro 12.9\" 256GB",
+      "category_id": "cat-6",
+      "serial_number": "DLXiPadPro129",
+      "acquisition_date": "2025-02-12",
+      "acquisition_cost": 1099.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Under Maintenance",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0007",
+      "name": "Electric Standing Desk 60x30",
+      "category_id": "cat-2",
+      "serial_number": "SD-6030-9912",
+      "acquisition_date": "2024-08-01",
+      "acquisition_cost": 650.0,
+      "condition": "Good",
+      "location": "HQ - Floor 4 - Dev Area",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0008",
+      "name": "Training Room B",
+      "category_id": "cat-4",
+      "serial_number": "ROOM-TRAIN-B",
+      "acquisition_date": "2024-01-01",
+      "acquisition_cost": 0.0,
+      "condition": "Good",
+      "location": "HQ - Floor 1 - Lobby South",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0009",
+      "name": "iPhone 15 Pro Max 512GB",
+      "category_id": "cat-6",
+      "serial_number": "IPHONE15PMX8821",
+      "acquisition_date": "2025-09-10",
+      "acquisition_cost": 1399.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 4 - Executive Suite",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "tony@assetflow.com",
+      "expected_return_date": "2026-12-31"
+    },
+    {
+      "id": "AF-0010",
+      "name": "ThinkPad X1 Carbon Gen 11",
+      "category_id": "cat-1",
+      "serial_number": "TP-X1C-99212",
+      "acquisition_date": "2025-05-15",
+      "acquisition_cost": 1850.0,
+      "condition": "Good",
+      "location": "HQ - Floor 2 - Legal Office",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0011",
+      "name": "Conference Room B",
+      "category_id": "cat-4",
+      "serial_number": "ROOM-CONF-B",
+      "acquisition_date": "2024-01-01",
+      "acquisition_cost": 0.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - East Wing",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0012",
+      "name": "Ford F-150 Lightning",
+      "category_id": "cat-3",
+      "serial_number": "1FTVW1EV4NWXXXXXX",
+      "acquisition_date": "2024-09-01",
+      "acquisition_cost": 55000.0,
+      "condition": "Good",
+      "location": "HQ - Loading Dock A",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0013",
+      "name": "Rigol Digital Oscilloscope",
+      "category_id": "cat-5",
+      "serial_number": "RIGOL-DS1054Z",
+      "acquisition_date": "2025-01-10",
+      "acquisition_cost": 450.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0014",
+      "name": "Steelcase Gesture Chair",
+      "category_id": "cat-2",
+      "serial_number": "SC-GEST-99121",
+      "acquisition_date": "2024-11-15",
+      "acquisition_cost": 1100.0,
+      "condition": "Good",
+      "location": "HQ - Floor 2 - Finance Wing",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "stephen@assetflow.com",
+      "expected_return_date": "2026-08-30"
+    },
+    {
+      "id": "AF-0015",
+      "name": "MacBook Air M2 13\"",
+      "category_id": "cat-1",
+      "serial_number": "C02MACAIRM2",
+      "acquisition_date": "2025-07-20",
+      "acquisition_cost": 1299.0,
+      "condition": "Good",
+      "location": "HQ - Floor 2 - HR Suite",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "wanda@assetflow.com",
+      "expected_return_date": "2026-10-15"
+    },
+    {
+      "id": "AF-0016",
+      "name": "Ultimaker S5 3D Printer",
+      "category_id": "cat-1",
+      "serial_number": "ULTI-S5-88122",
+      "acquisition_date": "2024-05-10",
+      "acquisition_cost": 5999.0,
+      "condition": "Fair",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Under Maintenance",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0017",
+      "name": "Executive Boardroom",
+      "category_id": "cat-4",
+      "serial_number": "ROOM-EXEC-BOARD",
+      "acquisition_date": "2024-01-01",
+      "acquisition_cost": 0.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 4 - Executive Suite",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0018",
+      "name": "Chevrolet Bolt EV",
+      "category_id": "cat-3",
+      "serial_number": "1G1FY6S00XXXXXX",
+      "acquisition_date": "2024-03-10",
+      "acquisition_cost": 28000.0,
+      "condition": "Good",
+      "location": "HQ - Parking Garage B1",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0019",
+      "name": "Flux Beamo Laser Cutter",
+      "category_id": "cat-5",
+      "serial_number": "FLUX-BEAMO-2023",
+      "acquisition_date": "2024-12-10",
+      "acquisition_cost": 2499.0,
+      "condition": "Good",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0020",
+      "name": "Dell UltraSharp 34\" Curved Monitor",
+      "category_id": "cat-1",
+      "serial_number": "DELL-U3419W-XYZ",
+      "acquisition_date": "2025-01-20",
+      "acquisition_cost": 749.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "sam@assetflow.com",
+      "expected_return_date": "2026-07-20"
+    },
+    {
+      "id": "AF-0021",
+      "name": "iPhone 14 128GB Black",
+      "category_id": "cat-6",
+      "serial_number": "IPHONE14-LOKI",
+      "acquisition_date": "2024-10-15",
+      "acquisition_cost": 799.0,
+      "condition": "Good",
+      "location": "HQ - Floor 2 - Sales Wing",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "loki@assetflow.com",
+      "expected_return_date": "2026-07-01"
+    },
+    {
+      "id": "AF-0022",
+      "name": "iPad Air M1 64GB",
+      "category_id": "cat-6",
+      "serial_number": "IPADAIRM1-AVAIL",
+      "acquisition_date": "2025-03-20",
+      "acquisition_cost": 599.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0023",
+      "name": "Mobile Magnetic Whiteboard",
+      "category_id": "cat-2",
+      "serial_number": "WB-MOBILE-64",
+      "acquisition_date": "2024-05-15",
+      "acquisition_cost": 250.0,
+      "condition": "Good",
+      "location": "HQ - Floor 4 - Dev Area",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0024",
+      "name": "Standing Desk Converter Ergotron",
+      "category_id": "cat-2",
+      "serial_number": "ERGOTRON-CONV",
+      "acquisition_date": "2024-06-01",
+      "acquisition_cost": 399.0,
+      "condition": "Good",
+      "location": "HQ - Floor 4 - Dev Area",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0025",
+      "name": "Conference Room C",
+      "category_id": "cat-4",
+      "serial_number": "ROOM-CONF-C",
+      "acquisition_date": "2024-01-01",
+      "acquisition_cost": 0.0,
+      "condition": "Good",
+      "location": "HQ - Floor 1 - South Wing",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0026",
+      "name": "Audi e-tron GT",
+      "category_id": "cat-3",
+      "serial_number": "WAUGBBGF9NXXXXXX",
+      "acquisition_date": "2025-05-10",
+      "acquisition_cost": 104000.0,
+      "condition": "Excellent",
+      "location": "HQ - Parking Garage B1",
+      "shared_bookable": true,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0027",
+      "name": "FLIR E4 Thermal Camera",
+      "category_id": "cat-5",
+      "serial_number": "FLIR-E4-77281",
+      "acquisition_date": "2024-11-20",
+      "acquisition_cost": 995.0,
+      "condition": "Good",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0028",
+      "name": "ThinkPad P16 Gen 2 Workstation",
+      "category_id": "cat-1",
+      "serial_number": "TP-P16G2-88121",
+      "acquisition_date": "2025-08-10",
+      "acquisition_cost": 2950.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 2 - Procurement",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "clint@assetflow.com",
+      "expected_return_date": "2026-08-15"
+    },
+    {
+      "id": "AF-0029",
+      "name": "iMac 24\" M3 Green",
+      "category_id": "cat-1",
+      "serial_number": "C02IMACM3GRN",
+      "acquisition_date": "2025-11-05",
+      "acquisition_cost": 1499.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 2 - Marketing Office",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "peter@assetflow.com",
+      "expected_return_date": "2026-09-01"
+    },
+    {
+      "id": "AF-0030",
+      "name": "Standing Desk Pro 72x30",
+      "category_id": "cat-2",
+      "serial_number": "SD-PRO-7230",
+      "acquisition_date": "2025-01-20",
+      "acquisition_cost": 950.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 4 - Executive Suite",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "carol@assetflow.com",
+      "expected_return_date": "2026-12-31"
+    },
+    {
+      "id": "AF-0031",
+      "name": "Herman Miller Embody",
+      "category_id": "cat-2",
+      "serial_number": "HM-EMBODY-88219",
+      "acquisition_date": "2025-03-01",
+      "acquisition_cost": 1600.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 2 - Legal Office",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Employee",
+      "current_holder_id": "diana@assetflow.com",
+      "expected_return_date": "2026-11-30"
+    },
+    {
+      "id": "AF-0032",
+      "name": "iPad Mini 6 64GB Grey",
+      "category_id": "cat-6",
+      "serial_number": "DLXIPADMINI6",
+      "acquisition_date": "2024-05-15",
+      "acquisition_cost": 499.0,
+      "condition": "Good",
+      "location": "HQ - Floor 3 - IT Lab",
+      "shared_bookable": false,
+      "status": "Lost",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0033",
+      "name": "MacBook Pro Intel 15\"",
+      "category_id": "cat-1",
+      "serial_number": "C02INTEL15OLD",
+      "acquisition_date": "2021-06-15",
+      "acquisition_cost": 2399.0,
+      "condition": "Poor",
+      "location": "HQ - Floor 3 - Storage Room",
+      "shared_bookable": false,
+      "status": "Retired",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0034",
+      "name": "Dell Latitude 5490",
+      "category_id": "cat-1",
+      "serial_number": "DELL-LAT-5490",
+      "acquisition_date": "2020-04-10",
+      "acquisition_cost": 1100.0,
+      "condition": "Poor",
+      "location": "Scrap / Recycler Depot",
+      "shared_bookable": false,
+      "status": "Disposed",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    },
+    {
+      "id": "AF-0035",
+      "name": "Ubiquiti Switch Pro 48 PoE",
+      "category_id": "cat-1",
+      "serial_number": "UB-USW-PRO-48-POE",
+      "acquisition_date": "2024-06-01",
+      "acquisition_cost": 1099.0,
+      "condition": "Excellent",
+      "location": "HQ - Floor 3 - Server Rack B",
+      "shared_bookable": false,
+      "status": "Allocated",
+      "current_holder_type": "Department",
+      "current_holder_id": "dept-1",
+      "expected_return_date": "2027-01-01"
+    },
+    {
+      "id": "AF-0036",
+      "name": "iphone16",
+      "category_id": "cat-6",
+      "serial_number": "d309488775",
+      "acquisition_date": "2026-07-06",
+      "acquisition_cost": 1234.0,
+      "condition": "Excellent",
+      "location": "it",
+      "shared_bookable": false,
+      "status": "Available",
+      "current_holder_type": null,
+      "current_holder_id": null,
+      "expected_return_date": null
+    }
+  ],
+  "allocations": [
+    {
+      "id": "alloc-1",
+      "asset_id": "AF-0001",
+      "holder_type": "Employee",
+      "holder_id": "priya@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-10-16",
+      "expected_return_date": "2026-09-30",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-2",
+      "asset_id": "AF-0005",
+      "holder_type": "Employee",
+      "holder_id": "raj@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2024-08-02",
+      "expected_return_date": "2026-06-30",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-3",
+      "asset_id": "AF-0009",
+      "holder_type": "Employee",
+      "holder_id": "tony@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-09-11",
+      "expected_return_date": "2026-12-31",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-4",
+      "asset_id": "AF-0010",
+      "holder_type": "Employee",
+      "holder_id": "natasha@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-05-16",
+      "expected_return_date": "2026-07-05",
+      "actual_return_date": "2026-07-12",
+      "check_in_notes": "yes",
+      "status": "Returned"
+    },
+    {
+      "id": "alloc-5",
+      "asset_id": "AF-0014",
+      "holder_type": "Employee",
+      "holder_id": "stephen@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2024-11-16",
+      "expected_return_date": "2026-08-30",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-6",
+      "asset_id": "AF-0015",
+      "holder_type": "Employee",
+      "holder_id": "wanda@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-07-21",
+      "expected_return_date": "2026-10-15",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-7",
+      "asset_id": "AF-0020",
+      "holder_type": "Employee",
+      "holder_id": "sam@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-01-21",
+      "expected_return_date": "2026-07-20",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-8",
+      "asset_id": "AF-0021",
+      "holder_type": "Employee",
+      "holder_id": "loki@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2024-10-16",
+      "expected_return_date": "2026-07-01",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-9",
+      "asset_id": "AF-0028",
+      "holder_type": "Employee",
+      "holder_id": "clint@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-08-11",
+      "expected_return_date": "2026-08-15",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-10",
+      "asset_id": "AF-0029",
+      "holder_type": "Employee",
+      "holder_id": "peter@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-11-06",
+      "expected_return_date": "2026-09-01",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-11",
+      "asset_id": "AF-0030",
+      "holder_type": "Employee",
+      "holder_id": "carol@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-01-21",
+      "expected_return_date": "2026-12-31",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-12",
+      "asset_id": "AF-0031",
+      "holder_type": "Employee",
+      "holder_id": "diana@assetflow.com",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2025-03-02",
+      "expected_return_date": "2026-11-30",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-13",
+      "asset_id": "AF-0035",
+      "holder_type": "Department",
+      "holder_id": "dept-1",
+      "allocated_by": "manager@assetflow.com",
+      "allocated_date": "2024-06-02",
+      "expected_return_date": "2027-01-01",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    },
+    {
+      "id": "alloc-1783839348",
+      "asset_id": "AF-0002",
+      "holder_type": "Employee",
+      "holder_id": "admin@assetflow.com",
+      "allocated_by": "admin@assetflow.com",
+      "allocated_date": "2026-07-12",
+      "expected_return_date": "2026-07-08",
+      "actual_return_date": null,
+      "check_in_notes": null,
+      "status": "Active"
+    }
+  ],
+  "transfers": [],
+  "bookings": [
+    {
+      "id": "book-1",
+      "resource_id": "AF-0003",
+      "user_id": "priya@assetflow.com",
+      "start_time": "2026-07-12T14:00:00",
+      "end_time": "2026-07-12T15:30:00",
+      "status": "Upcoming"
+    },
+    {
+      "id": "book-2",
+      "resource_id": "AF-0004",
+      "user_id": "sarah@assetflow.com",
+      "start_time": "2026-07-12T09:00:00",
+      "end_time": "2026-07-12T12:00:00",
+      "status": "Completed"
+    },
+    {
+      "id": "book-3",
+      "resource_id": "AF-0003",
+      "user_id": "tony@assetflow.com",
+      "start_time": "2026-07-12T10:00:00",
+      "end_time": "2026-07-12T11:30:00",
+      "status": "Completed"
+    },
+    {
+      "id": "book-4",
+      "resource_id": "AF-0008",
+      "user_id": "sam@assetflow.com",
+      "start_time": "2026-07-12T16:00:00",
+      "end_time": "2026-07-12T18:00:00",
+      "status": "Upcoming"
+    },
+    {
+      "id": "book-5",
+      "resource_id": "AF-0011",
+      "user_id": "raj@assetflow.com",
+      "start_time": "2026-07-13T09:00:00",
+      "end_time": "2026-07-13T10:30:00",
+      "status": "Upcoming"
+    },
+    {
+      "id": "book-6",
+      "resource_id": "AF-0012",
+      "user_id": "stephen@assetflow.com",
+      "start_time": "2026-07-13T13:00:00",
+      "end_time": "2026-07-13T17:00:00",
+      "status": "Upcoming"
+    },
+    {
+      "id": "book-7",
+      "resource_id": "AF-0017",
+      "user_id": "carol@assetflow.com",
+      "start_time": "2026-07-12T11:00:00",
+      "end_time": "2026-07-12T13:00:00",
+      "status": "Completed"
+    },
+    {
+      "id": "book-8",
+      "resource_id": "AF-0004",
+      "user_id": "peter@assetflow.com",
+      "start_time": "2026-07-11T14:00:00",
+      "end_time": "2026-07-11T16:00:00",
+      "status": "Completed"
+    },
+    {
+      "id": "book-9",
+      "resource_id": "AF-0003",
+      "user_id": "clint@assetflow.com",
+      "start_time": "2026-07-11T09:00:00",
+      "end_time": "2026-07-11T10:00:00",
+      "status": "Cancelled"
+    },
+    {
+      "id": "book-1783839567",
+      "resource_id": "AF-0026",
+      "user_id": "admin@assetflow.com",
+      "start_time": "2026-07-16T12:29",
+      "end_time": "2026-07-31T12:29",
+      "status": "Upcoming"
+    }
+  ],
+  "maintenance_requests": [
+    {
+      "id": "maint-1",
+      "asset_id": "AF-0006",
+      "raised_by": "priya@assetflow.com",
+      "description": "Screen flickering when tilting past 90 degrees.",
+      "priority": "Medium",
+      "status": "In Progress",
+      "technician_name": "Fix-It Electronics",
+      "photo_url": "",
+      "created_at": "2026-07-10T10:00:00",
+      "updated_at": "2026-07-11T09:00:00"
+    },
+    {
+      "id": "maint-2",
+      "asset_id": "AF-0016",
+      "raised_by": "tony@assetflow.com",
+      "description": "3D Printer extruder nozzle jammed.",
+      "priority": "Low",
+      "status": "Pending",
+      "technician_name": "",
+      "photo_url": "",
+      "created_at": "2026-07-12T11:00:00",
+      "updated_at": "2026-07-12T11:00:00"
+    },
+    {
+      "id": "maint-3",
+      "asset_id": "AF-0005",
+      "raised_by": "raj@assetflow.com",
+      "description": "Squeaky tension spring on Aeron chair.",
+      "priority": "Low",
+      "status": "Resolved",
+      "technician_name": "Office Helpers Co",
+      "photo_url": "",
+      "created_at": "2026-07-01T09:00:00",
+      "updated_at": "2026-07-02T16:00:00"
+    },
+    {
+      "id": "maint-4",
+      "asset_id": "AF-0009",
+      "raised_by": "tony@assetflow.com",
+      "description": "Scratched back glass plate.",
+      "priority": "Low",
+      "status": "Rejected",
+      "technician_name": "",
+      "photo_url": "",
+      "created_at": "2026-07-11T12:00:00",
+      "updated_at": "2026-07-11T14:00:00"
+    },
+    {
+      "id": "maint-5",
+      "asset_id": "AF-0018",
+      "raised_by": "john@assetflow.com",
+      "description": "EV charger socket latch locking mechanism stuck.",
+      "priority": "Medium",
+      "status": "Approved",
+      "technician_name": "",
+      "photo_url": "",
+      "created_at": "2026-07-12T08:00:00",
+      "updated_at": "2026-07-12T09:30:00"
+    },
+    {
+      "id": "maint-6",
+      "asset_id": "AF-0001",
+      "raised_by": "priya@assetflow.com",
+      "description": "MacBook Pro battery health degraded to 72%.",
+      "priority": "Medium",
+      "status": "Resolved",
+      "technician_name": "AppleCare Tech Bar",
+      "photo_url": "",
+      "created_at": "2026-06-15T10:00:00",
+      "updated_at": "2026-06-16T17:00:00"
+    }
+  ],
+  "audit_cycles": [
+    {
+      "id": "audit-1",
+      "name": "Q2 IT Electronics Audit",
+      "department_id": "dept-1",
+      "location": "HQ - Floor 3",
+      "date_start": "2026-06-01",
+      "date_end": "2026-06-15",
+      "auditors": [
+        "manager@assetflow.com"
+      ],
+      "status": "Closed",
+      "items": [
+        {
+          "asset_id": "AF-0001",
+          "status": "Verified",
+          "notes": "In pristine condition"
+        },
+        {
+          "asset_id": "AF-0002",
+          "status": "Verified",
+          "notes": "In IT lab cabinet"
+        },
+        {
+          "asset_id": "AF-0032",
+          "status": "Missing",
+          "notes": "Nowhere to be found in inventory closet"
+        }
+      ],
+      "discrepancy_report": "Audit Cycle 'Q2 IT Electronics Audit' closed by Marcus Vance on 2026-07-12.\nSummary: Verified: 2, Damaged: 0, Missing: 1, Un-audited: 0.\n\nDiscrepancies Found:\nAsset AF-0032 (iPad Mini 6 64GB Grey) marked MISSING. Set status to Lost."
+    },
+    {
+      "id": "audit-2",
+      "name": "Q3 SW-DEV Furniture Audit",
+      "department_id": "dept-4",
+      "location": "HQ - Floor 4",
+      "date_start": "2026-07-01",
+      "date_end": "2026-07-20",
+      "auditors": [
+        "manager@assetflow.com"
+      ],
+      "status": "Active",
+      "items": [
+        {
+          "asset_id": "AF-0005",
+          "status": "Verified",
+          "notes": "Checked at employee's desk"
+        },
+        {
+          "asset_id": "AF-0007",
+          "status": "Damaged",
+          "notes": "Height adjustment electric motor making grinding noise"
+        },
+        {
+          "asset_id": "AF-0023",
+          "status": "Pending",
+          "notes": ""
+        },
+        {
+          "asset_id": "AF-0024",
+          "status": "Pending",
+          "notes": ""
+        }
+      ],
+      "discrepancy_report": ""
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "user_id": "priya@assetflow.com",
+      "type": "Asset Assigned",
+      "message": "Asset AF-0001 (MacBook Pro M3 Max 16\") has been allocated to you. Expected return: 2026-09-30.",
+      "read": true,
+      "timestamp": "2025-10-16T09:00:00"
+    },
+    {
+      "id": "notif-2",
+      "user_id": "manager@assetflow.com",
+      "type": "Overdue Return Alert",
+      "message": "Asset AF-0005 (Herman Miller Aeron Chair) held by raj@assetflow.com is overdue (Expected Return: 2026-06-30).",
+      "read": false,
+      "timestamp": "2026-07-12T08:00:00"
+    },
+    {
+      "id": "notif-3",
+      "user_id": "raj@assetflow.com",
+      "type": "Overdue Return Alert",
+      "message": "Asset AF-0005 is overdue! Expected return date was 2026-06-30.",
+      "read": false,
+      "timestamp": "2026-07-12T08:00:00"
+    },
+    {
+      "id": "notif-4",
+      "user_id": "natasha@assetflow.com",
+      "type": "Overdue Return Alert",
+      "message": "Asset AF-0010 (ThinkPad X1 Carbon) held by natasha@assetflow.com is overdue (Expected Return: 2026-07-05).",
+      "read": false,
+      "timestamp": "2026-07-12T08:00:00"
+    },
+    {
+      "id": "notif-5",
+      "user_id": "loki@assetflow.com",
+      "type": "Overdue Return Alert",
+      "message": "Asset AF-0021 (iPhone 14 128GB Black) held by loki@assetflow.com is overdue (Expected Return: 2026-07-01).",
+      "read": false,
+      "timestamp": "2026-07-12T08:00:00"
+    },
+    {
+      "id": "notif-6",
+      "user_id": "manager@assetflow.com",
+      "type": "Audit Discrepancy Flagged",
+      "message": "Asset AF-0032 confirmed missing during audit 'Q2 IT Electronics Audit'.",
+      "read": true,
+      "timestamp": "2026-07-12T09:15:00"
+    },
+    {
+      "id": "notif-7",
+      "user_id": "admin@assetflow.com",
+      "type": "Welcome",
+      "message": "Welcome to AssetFlow ERP! Your administrator environment is initialized.",
+      "read": true,
+      "timestamp": "2026-07-12T06:30:00"
+    },
+    {
+      "id": "notif-1783838932728",
+      "user_id": "admin@assetflow.com",
+      "type": "Role Promotion",
+      "message": "Your system role has been updated to Asset Manager by the Administrator.",
+      "read": false,
+      "timestamp": "2026-07-12T12:18:52.728104"
+    },
+    {
+      "id": "notif-1783839315942",
+      "user_id": "natasha@assetflow.com",
+      "type": "Return Approved",
+      "message": "Return of asset AF-0010 has been processed. Condition check notes: yes",
+      "read": false,
+      "timestamp": "2026-07-12T12:25:15.942320"
+    },
+    {
+      "id": "notif-1783839348529",
+      "user_id": "admin@assetflow.com",
+      "type": "Asset Assigned",
+      "message": "Asset Dell XPS 15 9530 (AF-0002) has been allocated to you. Expected return: 2026-07-08.",
+      "read": false,
+      "timestamp": "2026-07-12T12:25:48.529731"
+    },
+    {
+      "id": "notif-1783839567625",
+      "user_id": "admin@assetflow.com",
+      "type": "Booking Confirmed",
+      "message": "Your booking for Audi e-tron GT has been confirmed for 2026-07-16T12:29 - 2026-07-31T12:29.",
+      "read": false,
+      "timestamp": "2026-07-12T12:29:27.625308"
+    }
+  ],
+  "activity_logs": [
+    {
+      "id": "log-1",
+      "user_id": "manager@assetflow.com",
+      "user_name": "Marcus Vance",
+      "user_role": "Asset Manager",
+      "action": "Asset Registered",
+      "details": "Registered new Electronics: Dell XPS 15 9530 (AF-0002)",
+      "timestamp": "2025-11-20T10:15:00"
+    },
+    {
+      "id": "log-2",
+      "user_id": "priya@assetflow.com",
+      "user_name": "Priya Sharma",
+      "user_role": "Department Head",
+      "action": "Resource Booked",
+      "details": "Booked Conference Room A (AF-0003) for 2026-07-12 14:00-15:30",
+      "timestamp": "2026-07-11T16:45:00"
+    },
+    {
+      "id": "log-3",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Admin",
+      "action": "Create Department",
+      "details": "Created department Finance & Procurement (FIN-PRO)",
+      "timestamp": "2026-07-12T07:15:00"
+    },
+    {
+      "id": "log-4",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Admin",
+      "action": "Change User Role",
+      "details": "Promoted Stephen Strange to Department Head of FIN-PRO",
+      "timestamp": "2026-07-12T07:20:00"
+    },
+    {
+      "id": "log-5",
+      "user_id": "manager@assetflow.com",
+      "user_name": "Marcus Vance",
+      "user_role": "Asset Manager",
+      "action": "Close Audit Cycle",
+      "details": "Closed audit cycle Q2 IT Electronics Audit. Discrepancies: 1 missing.",
+      "timestamp": "2026-07-12T09:15:00"
+    },
+    {
+      "id": "log-1783838932728",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Admin",
+      "action": "Change User Role",
+      "details": "Promoted/Changed role of admin@assetflow.com from Admin to Asset Manager",
+      "timestamp": "2026-07-12T12:18:52.728091"
+    },
+    {
+      "id": "log-1783839014044",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Asset Manager",
+      "action": "Register Asset",
+      "details": "Registered new asset iphone16 as tag AF-0036",
+      "timestamp": "2026-07-12T12:20:14.044555"
+    },
+    {
+      "id": "log-1783839315942",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Asset Manager",
+      "action": "Return Asset",
+      "details": "Approved return of asset AF-0010 from natasha@assetflow.com. Condition: Good",
+      "timestamp": "2026-07-12T12:25:15.942309"
+    },
+    {
+      "id": "log-1783839348529",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Asset Manager",
+      "action": "Allocate Asset",
+      "details": "Allocated asset AF-0002 to Employee admin@assetflow.com",
+      "timestamp": "2026-07-12T12:25:48.529719"
+    },
+    {
+      "id": "log-1783839567625",
+      "user_id": "admin@assetflow.com",
+      "user_name": "System Admin",
+      "user_role": "Asset Manager",
+      "action": "Book Resource",
+      "details": "Booked Audi e-tron GT (AF-0026) from 2026-07-16T12:29 to 2026-07-31T12:29",
+      "timestamp": "2026-07-12T12:29:27.625299"
+    }
+  ]
+}
